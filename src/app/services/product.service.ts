@@ -44,4 +44,13 @@ export class ProductService {
     let getUrl = `${this.url}/${id}`;
     return this.http.delete<any>(getUrl);
   }
+
+  // Review
+  reviewProduct(id : any,review:any){
+    let getUrl = `${this.url}/${id}`;
+    return this.http.patch<any>(getUrl,review)
+      .pipe(map((res)=>{
+        return res;
+      }));
+}
 }
